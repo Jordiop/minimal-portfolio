@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jordiop.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/about"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/about"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/about"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/about"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/about"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/about"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/gallery"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/gallery"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/gallery"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/gallery"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/gallery"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/gallery"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/music</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/music"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/music"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/music"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/music"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/music</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/music"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/music"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/music"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/music"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/music</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/music"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/music"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/music"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/music"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/portfolio-v2</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/portfolio-v2"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/portfolio-v2</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/portfolio-v2"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/portfolio-v2</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/portfolio-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/portfolio-v2"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/git-viewer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/git-viewer"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/git-viewer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/git-viewer"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/git-viewer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/git-viewer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/git-viewer"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/forza-telemetry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/forza-telemetry"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/forza-telemetry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/forza-telemetry"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/forza-telemetry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/forza-telemetry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/forza-telemetry"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/card-forge</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/card-forge"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/card-forge</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/card-forge"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/card-forge</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/card-forge"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/card-forge"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/portfolio-v1</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/portfolio-v1"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/portfolio-v1</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/portfolio-v1"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/portfolio-v1</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/portfolio-v1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/portfolio-v1"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/mood-tracker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/mood-tracker"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/mood-tracker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/mood-tracker"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/mood-tracker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/mood-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/mood-tracker"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/newtab-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/newtab-extension"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/newtab-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/newtab-extension"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/newtab-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/newtab-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/newtab-extension"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.com/projects/weather-app</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/weather-app"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.es/projects/weather-app</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/weather-app"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jordiop.cat/projects/weather-app</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jordiop.com/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://jordiop.es/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/projects/weather-app"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jordiop.com/projects/weather-app"/>
+    <priority>0.7</priority>
+  </url>
+</urlset>

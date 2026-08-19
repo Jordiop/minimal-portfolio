@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#f2efe9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)" />
+
+    <!--
+      Static fallbacks for the home page. Once the app boots, useSeo() rewrites
+      the title, description, canonical, og:*, twitter:* and hreflang tags for
+      whichever route and language is showing.
+    -->
+    <title>Jordi Osarenkhoe — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Full Stack Developer in Mallorca. I build, optimize and fix web apps with Vue, Nuxt and TypeScript. Selected projects, background and contact."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Jordi Osarenkhoe" />
+
+    <meta property="og:site_name" content="Jordi Osarenkhoe" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jordi Osarenkhoe — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full Stack Developer in Mallorca. I build, optimize and fix web apps with Vue, Nuxt and TypeScript."
+    />
+    <meta property="og:url" content="https://jordiop.com/" />
+    <meta property="og:image" content="https://jordiop.com/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jordiscript" />
+
+    <link rel="canonical" href="https://jordiop.com/" />
+    <link rel="alternate" hreflang="en" href="https://jordiop.com/" />
+    <link rel="alternate" hreflang="es-ES" href="https://jordiop.es/" />
+    <link rel="alternate" hreflang="ca-ES" href="https://jordiop.cat/" />
+    <link rel="alternate" hreflang="x-default" href="https://jordiop.com/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data: who this site is about, for rich results and knowledge panels. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jordi Osarenkhoe",
+        "url": "https://jordiop.com",
+        "image": "https://jordiop.com/favicon.png",
+        "jobTitle": "Full Stack Developer",
+        "email": "mailto:jordiosarenkhoe@outlook.es",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mallorca",
+          "addressCountry": "ES"
+        },
+        "knowsLanguage": ["en", "es", "ca"],
+        "knowsAbout": [
+          "Vue.js",
+          "Nuxt",
+          "TypeScript",
+          "Node.js",
+          "Tailwind CSS",
+          "PostgreSQL",
+          "Rust",
+          "Docker"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Omniaccess / Marlink"
+        },
+        "sameAs": [
+          "https://github.com/jordiop",
+          "https://www.linkedin.com/in/jordiop/",
+          "https://twitter.com/jordiscript"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Jordi Osarenkhoe",
+        "url": "https://jordiop.com",
+        "inLanguage": ["en", "es", "ca"],
+        "author": { "@type": "Person", "name": "Jordi Osarenkhoe" }
+      }
+    </script>
+
+    <!-- Applies the stored theme before first paint so there is no flash. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          var dark =
+            saved === 'dark' ||
+            (saved !== 'light' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

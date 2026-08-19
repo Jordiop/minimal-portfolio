@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jordiop.com/sitemap.xml
+Sitemap: https://jordiop.es/sitemap.xml
+Sitemap: https://jordiop.cat/sitemap.xml
