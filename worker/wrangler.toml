@@ -1,0 +1,19 @@
+# Reference config for gallery-worker. The worker is currently edited and
+# deployed from the Cloudflare dashboard; this file documents the bindings it
+# needs, and lets you switch to `wrangler deploy` later without guessing.
+
+name = "gallery-worker"
+main = "src/index.js"
+compatibility_date = "2026-09-20"
+
+# Check the real bucket name under Workers & Pages → gallery-worker →
+# Settings → Bindings. The variable name must be PHOTOS_BUCKET.
+[[r2_buckets]]
+binding = "PHOTOS_BUCKET"
+bucket_name = "gallery"
+
+# Secrets are NOT set here — they would end up in git. Set them with
+# `wrangler secret put <NAME>`, or in the dashboard:
+#   SPOTIFY_CLIENT_ID
+#   SPOTIFY_CLIENT_SECRET
+#   SPOTIFY_REFRESH_TOKEN

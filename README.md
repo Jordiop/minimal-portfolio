@@ -228,6 +228,18 @@ before first paint so there is no flash of the wrong theme.
 - **The photo gallery** on `/gallery` lists a Cloudflare R2 bucket through a worker.
   Set `VITE_R2_PUBLIC_URL` and `VITE_R2_LIST_ENDPOINT` in `.env` (see `.env.example`);
   without them the page shows a notice instead of failing.
+- **Now playing** on `/music` comes from the same worker's `/now-playing` route, set via
+  `VITE_NOW_PLAYING_ENDPOINT`; without it the widget hides itself. The Spotify client ID,
+  secret and refresh token are Worker secrets — they must never become `VITE_*`
+  variables, because Vite inlines those into the public bundle.
+
+### The worker
+
+`worker/src/index.js` is the source for `gallery-worker`, serving both routes. Its CORS
+allowlist has to name every production domain: on a miss it sends no
+`Access-Control-Allow-Origin` at all, so a forgotten domain fails loudly in the console
+rather than looking like a dead endpoint. `worker/wrangler.toml` documents the R2 binding
+(`PHOTOS_BUCKET`) and the three secrets.
 
 ## SEO
 

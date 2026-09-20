@@ -22,7 +22,6 @@ const pad = (index) => String(index + 1).padStart(2, '0')
         class="flex h-14 min-w-0 items-center gap-2 text-[13px] transition-colors duration-300 hover:text-accent"
       >
         <span class="truncate font-bold tracking-tight">{{ site.name }}</span>
-        <span class="hidden shrink-0 text-faint 2xl:inline">/ {{ pick(site.role).toLowerCase() }}</span>
       </RouterLink>
 
       <nav
