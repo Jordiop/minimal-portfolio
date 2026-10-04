@@ -8,7 +8,7 @@ useSeoHead()
 </script>
 
 <template>
-  <div class="relative z-10 flex min-h-screen flex-col">
+  <div class="relative z-10 flex min-h-screen flex-col overflow-x-clip">
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:border focus:border-accent focus:bg-paper focus:px-3 focus:py-2 focus:text-[13px]"

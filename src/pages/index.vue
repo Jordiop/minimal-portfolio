@@ -8,6 +8,7 @@ import { site } from '@/data/site'
 import { featuredProjects } from '@/data/projects'
 import { useI18n } from '@/i18n'
 import ProjectRow from '@/components/ProjectRow.vue'
+import ForestScene from '@/components/ForestScene.vue'
 import portrait from '@/assets/images/meirl.jpg'
 
 const { t, pick } = useI18n()
@@ -44,7 +45,9 @@ onMounted(() => {
 <template>
   <div class="rise">
     <!-- Hero -->
-    <section class="border-b border-rule pb-14">
+    <section class="relative isolate flex min-h-[78svh] flex-col justify-center border-b border-rule pb-14">
+      <ForestScene />
+
       <p class="label mb-8">{{ pick(site.greeting) }}</p>
 
       <h1
