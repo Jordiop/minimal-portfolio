@@ -1,0 +1,40 @@
+{
+  "order": 50,
+  "year": 2025,
+  "featured": false,
+  "finished": true,
+  "tech": [
+    "Vue 3",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vite"
+  ],
+  "github": "https://github.com/Jordiop/portfolio",
+  "demo": "https://old.jordiop.com",
+  "title": "Portfolio v1",
+  "description": "La primera versión, ahora archivada en old.jordiop.es y old.jordiop.com. Un portfolio construido alrededor de un diseño original de editor de código: paleta de comandos, barra de pestañas y un panel dividido que muestra cada página como código resaltado. Vue 3, TypeScript y Tailwind CSS.",
+  "role": "Proyecto en solitario",
+  "durationLabel": "En curso",
+  "problem": "La mayoría de portfolios de desarrollador son iguales: una cabecera, una rejilla de proyectos, un formulario de contacto. Quería un portfolio que mostrara lo que realmente hago cada día —escribir Vue y TypeScript dentro de un editor de código— sin sacrificar la legibilidad para quien lo visita sin ser desarrollador.",
+  "approach": "Planteé toda la interfaz como un editor de código falso: una barra lateral de iconos, una barra de pestañas y un panel dividido donde la izquierda muestra el código de la página resaltado y la derecha muestra la vista real. Cada página es una ruta de Vue real, pero el código que aparece al lado se genera a partir de los mismos datos que alimentan la vista, así que nunca pueden desincronizarse. Cmd/Ctrl+B oculta el panel de código para quien prefiera solo leer.",
+  "outcome": "Un portfolio que también funciona como demo técnica. Quien lo visita ve Vue 3 + Tailwind v4 + Vite funcionando en directo, con paleta de comandos, modo oscuro, navegación móvil de cristal líquido, un widget de Spotify y una galería de fotos servida desde Cloudflare R2. Todas las rutas se renderizan en menos de 200 ms en hardware de desarrollo.",
+  "learnings": [
+    "Generar el código resaltado a partir de datos estructurados es mejor que mantener dos fuentes de verdad en paralelo.",
+    "Una paleta de comandos se amortiza la primera vez que enseñas la web a alguien: navegar con el teclado es realmente más rápido.",
+    "El tema basado en variables CSS de Tailwind v4 convirtió el modo oscuro en un cambio de 5 líneas en vez de una refactorización."
+  ],
+  "metrics": [
+    {
+      "label": "Lighthouse",
+      "value": "98"
+    },
+    {
+      "label": "Rutas",
+      "value": "6"
+    },
+    {
+      "label": "Primer pintado",
+      "value": "<300ms"
+    }
+  ]
+}

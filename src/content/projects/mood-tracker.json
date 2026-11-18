@@ -1,0 +1,39 @@
+{
+  "order": 60,
+  "year": 2024,
+  "featured": false,
+  "finished": true,
+  "tech": [
+    "Vue.js",
+    "Laravel",
+    "Supabase"
+  ],
+  "github": "https://github.com/Jordiop/mood-tracker",
+  "demo": "https://mood.jordiop.es",
+  "title": "Mood Tracker",
+  "description": "A simple and intuitive mood tracking app that helps users monitor their emotional well-being over time, featuring daily logs and insightful analytics.",
+  "role": "Solo build",
+  "durationLabel": "3 weeks",
+  "problem": "Off-the-shelf mood tracking apps either drown the user in features or lock the data behind a paywall. I wanted something that took ten seconds a day to use, kept the data in a Postgres I controlled, and turned a month of logs into something I could actually look at.",
+  "approach": "Vue on the front for the daily log UI, Laravel as the API layer (auth, validation, aggregation queries), and Supabase for managed Postgres + auth. The daily log is a single screen — emoji picker, optional note, save. The analytics view rolls 30 days of entries into a heatmap and a trend line so patterns show up without scrolling.",
+  "outcome": "Used it daily for several months. The 10-second log target held — I never skipped a day because of friction. The monthly heatmap surfaced a sleep-mood correlation that would not have been obvious from individual entries.",
+  "learnings": [
+    "Splitting auth (Supabase) from business logic (Laravel) was overkill for a solo app — one of them could have done both.",
+    "The hardest part was not the tracking, it was designing the analytics view so a glance gave you something useful.",
+    "Daily-streak gamification was tempting but I left it out. Tracking should serve the user, not retain them."
+  ],
+  "metrics": [
+    {
+      "label": "Time per log",
+      "value": "<10s"
+    },
+    {
+      "label": "Stack",
+      "value": "Vue + Laravel"
+    },
+    {
+      "label": "Daily users",
+      "value": "1 (me)"
+    }
+  ]
+}

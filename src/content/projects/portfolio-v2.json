@@ -1,0 +1,38 @@
+{
+  "order": 10,
+  "year": 2026,
+  "featured": true,
+  "finished": true,
+  "tech": [
+    "Vue 3",
+    "Vite",
+    "Tailwind CSS v4",
+    "JavaScript"
+  ],
+  "title": "Portfolio v2",
+  "description": "The site you're reading. A monospace portfolio set entirely in Courier Prime, rebuilt from scratch around the content instead of the chrome — file-based routing, three languages and light/dark themes.",
+  "role": "Solo build",
+  "durationLabel": "Ongoing",
+  "problem": "v1 was a tech demo first and a portfolio second. The code-editor frame was the whole idea, and it worked — but it put a layer of interface between a visitor and the actual work, and it only really landed for people who already knew what a code editor was. I wanted the opposite: something that gets out of the way.",
+  "approach": "One typeface for everything — Courier Prime — and a layout built from hairline rules, index numbers and a single accent colour, so hierarchy comes from spacing and weight rather than decoration. Routing is file-based: a .vue file dropped into src/pages becomes a route and declares its own nav label and title. All the content lives in three data files, so adding a project or an album is one object, not a new component.",
+  "outcome": "Six routes, three languages and a third less JavaScript than v1. Language follows the domain — .cat opens in Catalan, .es in Spanish, .com in English — and the theme follows the operating system until you override it. The live parts survived the rewrite: GitHub stats, Spotify now playing, and the Cloudflare R2 gallery.",
+  "learnings": [
+    "Domain-based language detection is three lines of code and removes an entire decision from the visitor. It should be the default, not the fallback.",
+    "Keeping translations next to the content instead of in a separate catalogue kept 'add a project' a one-file job — the thing that made v1 pleasant to maintain.",
+    "Monospace forces honesty about hierarchy. With one weight axis and no display face to hide behind, anything that isn't earning its place is obvious."
+  ],
+  "metrics": [
+    {
+      "label": "Bundle",
+      "value": "61 kB gz"
+    },
+    {
+      "label": "Languages",
+      "value": "3"
+    },
+    {
+      "label": "Runtime deps",
+      "value": "2"
+    }
+  ]
+}

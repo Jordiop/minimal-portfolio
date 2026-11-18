@@ -1,0 +1,39 @@
+{
+  "order": 60,
+  "year": 2024,
+  "featured": false,
+  "finished": true,
+  "tech": [
+    "Vue.js",
+    "Laravel",
+    "Supabase"
+  ],
+  "github": "https://github.com/Jordiop/mood-tracker",
+  "demo": "https://mood.jordiop.es",
+  "title": "Mood Tracker",
+  "description": "Una aplicació senzilla i intuïtiva per registrar l'estat d'ànim i seguir el benestar emocional al llarg del temps, amb registres diaris i analítiques útils.",
+  "role": "Projecte en solitari",
+  "durationLabel": "3 setmanes",
+  "problem": "Les apps de seguiment de l'ànim que hi ha o ofeguen l'usuari amb funcions o amaguen les dades darrere d'un mur de pagament. Volia una cosa que costés deu segons al dia, que guardés les dades en un Postgres sota el meu control i que convertís un mes de registres en alguna cosa que es pogués mirar de debò.",
+  "approach": "Vue al front per a la interfície del registre diari, Laravel com a capa d'API (autenticació, validació, consultes d'agregació) i Supabase per a Postgres gestionat i autenticació. El registre diari és una sola pantalla: selector d'emoji, nota opcional, desar. La vista d'analítiques agrupa 30 dies d'entrades en un mapa de calor i una línia de tendència perquè els patrons es vegin sense fer scroll.",
+  "outcome": "El vaig fer servir diàriament durant uns quants mesos. L'objectiu dels 10 segons es va mantenir: mai vaig saltar-me un dia per fricció. El mapa de calor mensual va treure a la llum una correlació entre son i ànim que no hauria estat evident mirant entrades soltes.",
+  "learnings": [
+    "Separar l'autenticació (Supabase) de la lògica de negoci (Laravel) va ser excessiu per a una app en solitari: qualsevol dels dos hauria pogut fer les dues coses.",
+    "El més difícil no va ser el registre, sinó dissenyar la vista d'analítiques perquè una ullada et donés alguna cosa útil.",
+    "La gamificació per ratxes diàries era temptadora, però la vaig deixar fora. El registre ha de servir l'usuari, no retenir-lo."
+  ],
+  "metrics": [
+    {
+      "label": "Temps per registre",
+      "value": "<10s"
+    },
+    {
+      "label": "Stack",
+      "value": "Vue + Laravel"
+    },
+    {
+      "label": "Usuaris diaris",
+      "value": "1 (jo)"
+    }
+  ]
+}

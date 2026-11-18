@@ -1,0 +1,38 @@
+{
+  "order": 10,
+  "year": 2026,
+  "featured": true,
+  "finished": true,
+  "tech": [
+    "Vue 3",
+    "Vite",
+    "Tailwind CSS v4",
+    "JavaScript"
+  ],
+  "title": "Portfolio v2",
+  "description": "El lloc que estàs llegint. Un portfolio monoespaiat compost íntegrament en Courier Prime, reconstruït des de zero al voltant del contingut en lloc de l'envoltori: rutes basades en fitxers, tres idiomes i temes clar/fosc.",
+  "role": "Projecte en solitari",
+  "durationLabel": "En curs",
+  "problem": "La v1 era abans una demo tècnica que un portfolio. El marc d'editor de codi era la idea sencera, i funcionava, però posava una capa d'interfície entre qui visitava i la feina en si, i només calava de debò en qui ja sabia què era un editor de codi. Volia el contrari: alguna cosa que s'aparti del mig.",
+  "approach": "Una sola tipografia per a tot —Courier Prime— i una maquetació feta de filets fins, numeració i un únic color d'accent, perquè la jerarquia vingui de l'espaiat i del pes en lloc de la decoració. L'encaminament és per fitxers: un .vue a src/pages es converteix en una ruta i declara la seva pròpia etiqueta de navegació i el seu títol. Tot el contingut viu en tres fitxers de dades, així que afegir un projecte o un àlbum és un objecte, no un component nou.",
+  "outcome": "Sis rutes, tres idiomes i un terç menys de JavaScript que la v1. L'idioma segueix el domini —.cat obre en català, .es en castellà, .com en anglès— i el tema segueix el sistema operatiu fins que el canvies. Les parts en directe van sobreviure a la reescriptura: estadístiques de GitHub, Spotify sonant ara i la galeria de Cloudflare R2.",
+  "learnings": [
+    "La detecció d'idioma per domini són tres línies de codi i li treu al visitant una decisió sencera. Hauria de ser el normal, no el recurs d'última hora.",
+    "Posar les traduccions al costat del contingut en lloc d'en un catàleg a part va mantenir 'afegir un projecte' com una feina d'un sol fitxer, que és el que feia agradable mantenir la v1.",
+    "El monoespaiat obliga a ser honest amb la jerarquia. Amb un sol eix de pes i sense tipografia de titulars darrere la qual amagar-se, el que no es guanya el seu lloc canta."
+  ],
+  "metrics": [
+    {
+      "label": "Bundle",
+      "value": "61 kB gz"
+    },
+    {
+      "label": "Idiomes",
+      "value": "3"
+    },
+    {
+      "label": "Dependències",
+      "value": "2"
+    }
+  ]
+}

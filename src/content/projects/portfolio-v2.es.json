@@ -1,0 +1,38 @@
+{
+  "order": 10,
+  "year": 2026,
+  "featured": true,
+  "finished": true,
+  "tech": [
+    "Vue 3",
+    "Vite",
+    "Tailwind CSS v4",
+    "JavaScript"
+  ],
+  "title": "Portfolio v2",
+  "description": "El sitio que estás leyendo. Un portfolio monoespaciado compuesto íntegramente en Courier Prime, reconstruido desde cero en torno al contenido en lugar del envoltorio: rutas basadas en archivos, tres idiomas y temas claro/oscuro.",
+  "role": "Proyecto en solitario",
+  "durationLabel": "En curso",
+  "problem": "La v1 era antes una demo técnica que un portfolio. El marco de editor de código era la idea entera, y funcionaba, pero ponía una capa de interfaz entre quien visitaba y el trabajo en sí, y solo calaba de verdad en quien ya sabía lo que era un editor de código. Quería lo contrario: algo que se quite de en medio.",
+  "approach": "Una sola tipografía para todo —Courier Prime— y una maquetación hecha de filetes finos, numeración y un único color de acento, para que la jerarquía venga del espaciado y del peso en vez de la decoración. El enrutado es por archivos: un .vue en src/pages se convierte en una ruta y declara su propia etiqueta de navegación y su título. Todo el contenido vive en tres archivos de datos, así que añadir un proyecto o un álbum es un objeto, no un componente nuevo.",
+  "outcome": "Seis rutas, tres idiomas y un tercio menos de JavaScript que la v1. El idioma sigue al dominio —.cat abre en catalán, .es en castellano, .com en inglés— y el tema sigue al sistema operativo hasta que lo cambias. Las partes en vivo sobrevivieron a la reescritura: estadísticas de GitHub, Spotify sonando ahora y la galería de Cloudflare R2.",
+  "learnings": [
+    "La detección de idioma por dominio son tres líneas de código y le quita al visitante una decisión entera. Debería ser lo normal, no el recurso de última hora.",
+    "Poner las traducciones junto al contenido en lugar de en un catálogo aparte mantuvo 'añadir un proyecto' como un trabajo de un solo archivo, que es lo que hacía agradable mantener la v1.",
+    "El monoespaciado obliga a ser honesto con la jerarquía. Con un solo eje de peso y sin tipografía de titulares tras la que esconderse, lo que no se gana su sitio canta."
+  ],
+  "metrics": [
+    {
+      "label": "Bundle",
+      "value": "61 kB gz"
+    },
+    {
+      "label": "Idiomas",
+      "value": "3"
+    },
+    {
+      "label": "Dependencias",
+      "value": "2"
+    }
+  ]
+}

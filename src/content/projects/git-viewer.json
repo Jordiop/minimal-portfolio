@@ -1,0 +1,18 @@
+{
+  "order": 20,
+  "year": 2026,
+  "featured": true,
+  "finished": false,
+  "tech": [
+    "Tauri",
+    "Rust",
+    "React",
+    "TypeScript"
+  ],
+  "github": "https://github.com/Jordiop/git-viewer",
+  "title": "Git Viewer",
+  "description": "A standalone desktop app that scans a folder tree for git repositories and gives you a VSCode-style Source Control panel — status, staged and unstaged diffs, commit, fetch, pull, push and branch switching — without running an editor.",
+  "role": "Solo build",
+  "problem": "I was tired of depending on each text editor's own implementation of git. I like the way VSCode handles it, but I don't want to run a full, bloated editor just to manage my repositories — especially now that they are all piling on agentic features with no real way to make them disappear.",
+  "approach": "Tauri with a Rust core for the git operations and filesystem scanning, and a React + shadcn/ui front end for the interface. Diffs are rendered with the Monaco diff editor, so the part everyone actually looks at behaves exactly like the editor it is replacing."
+}

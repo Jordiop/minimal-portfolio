@@ -1,5 +1,5 @@
 <script>
-export const route = { titleKey: 'titles.about', descriptionKey: 'seo.about', labelKey: 'nav.about', nav: true, order: 3 }
+export const route = { titleKey: 'titles.about', descriptionKey: 'seo.about', labelKey: 'nav.about', nav: true, order: 4 }
 </script>
 
 <script setup>
@@ -28,7 +28,7 @@ const cards = computed(() => [
 <template>
   <div class="rise">
     <PageHead
-      :index="`02 — ${t('titles.about')}`"
+      :index="`03 — ${t('titles.about')}`"
       :title="t('about.heading')"
       :lede="paragraphs[0]"
     >

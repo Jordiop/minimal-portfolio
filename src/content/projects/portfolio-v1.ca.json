@@ -1,0 +1,40 @@
+{
+  "order": 50,
+  "year": 2025,
+  "featured": false,
+  "finished": true,
+  "tech": [
+    "Vue 3",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vite"
+  ],
+  "github": "https://github.com/Jordiop/portfolio",
+  "demo": "https://old.jordiop.com",
+  "title": "Portfolio v1",
+  "description": "La primera versió, ara arxivada a old.jordiop.es i old.jordiop.com. Un portfolio construït al voltant d'un disseny original d'editor de codi: paleta d'ordres, barra de pestanyes i un panell dividit que mostra cada pàgina com a codi ressaltat. Vue 3, TypeScript i Tailwind CSS.",
+  "role": "Projecte en solitari",
+  "durationLabel": "En curs",
+  "problem": "La majoria de portfolios de desenvolupador són iguals: una capçalera, una graella de projectes, un formulari de contacte. Volia un portfolio que mostrés el que realment faig cada dia —escriure Vue i TypeScript dins d'un editor de codi— sense sacrificar la llegibilitat per a qui el visita sense ser desenvolupador.",
+  "approach": "Vaig plantejar tota la interfície com un editor de codi fals: una barra lateral d'icones, una barra de pestanyes i un panell dividit on l'esquerra mostra el codi de la pàgina ressaltat i la dreta mostra la vista real. Cada pàgina és una ruta de Vue real, però el codi que apareix al costat es genera a partir de les mateixes dades que alimenten la vista, així que mai es poden desincronitzar. Cmd/Ctrl+B amaga el panell de codi per a qui prefereixi només llegir.",
+  "outcome": "Un portfolio que també funciona com a demo tècnica. Qui el visita veu Vue 3 + Tailwind v4 + Vite funcionant en directe, amb paleta d'ordres, mode fosc, navegació mòbil de vidre líquid, un widget de Spotify i una galeria de fotos servida des de Cloudflare R2. Totes les rutes es renderitzen en menys de 200 ms en maquinari de desenvolupament.",
+  "learnings": [
+    "Generar el codi ressaltat a partir de dades estructurades és millor que mantenir dues fonts de veritat en paral·lel.",
+    "Una paleta d'ordres s'amortitza la primera vegada que ensenyes el web a algú: navegar amb el teclat és realment més ràpid.",
+    "El tema basat en variables CSS de Tailwind v4 va convertir el mode fosc en un canvi de 5 línies en lloc d'una refactorització."
+  ],
+  "metrics": [
+    {
+      "label": "Lighthouse",
+      "value": "98"
+    },
+    {
+      "label": "Rutes",
+      "value": "6"
+    },
+    {
+      "label": "Primer pintat",
+      "value": "<300ms"
+    }
+  ]
+}

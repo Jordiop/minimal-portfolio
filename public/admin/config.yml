@@ -1,0 +1,131 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+#
+# Sveltia CMS — served at /admin/. Every save is a commit to main, which
+# Vercel redeploys. Posts land in src/content/blog and are read at build time
+# by the blog-markdown plugin in vite.config.js.
+
+backend:
+  name: github
+  repo: Jordiop/minimal-portfolio
+  branch: main
+  # Sveltia CMS Authenticator (Cloudflare Worker) — handles the GitHub login.
+  base_url: https://sveltia-cms-auth.jordiop.workers.dev
+  commit_messages:
+    create: 'blog: add “{{slug}}”'
+    update: 'blog: update “{{slug}}”'
+    delete: 'blog: delete “{{slug}}”'
+    uploadMedia: 'blog: upload {{path}}'
+    deleteMedia: 'blog: delete {{path}}'
+
+# Images go in the repo next to the code. Not under /blog, which is a route.
+media_folder: /public/media/blog
+public_folder: /media/blog
+
+# Posts are written in English; Spanish and Catalan are optional translations,
+# created with the Translate button (Settings → Translation services for the key).
+#   hello-world.md     English original
+#   hello-world.es.md  Spanish
+#   hello-world.ca.md  Catalan
+i18n:
+  structure: multiple_files
+  locales: [en, es, ca]
+  default_locale: en
+  initial_locales: default
+  omit_default_locale_from_file_path: true
+
+collections:
+  - name: blog
+    label: Blog
+    label_singular: Post
+    folder: /src/content/blog
+    extension: md
+    format: frontmatter
+    create: true
+    i18n: true
+    slug: '{{slug}}'
+    identifier_field: title
+    summary: '{{title}} — {{date | date("YYYY-MM-DD")}}'
+    sortable_fields:
+      fields: [date, title]
+      default: { field: date, direction: descending }
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - label: Description
+        name: description
+        widget: text
+        i18n: true
+        hint: One or two sentences. Shown in the post list and as the search/social description.
+      - { label: Date, name: date, widget: datetime, type: date, i18n: duplicate }
+      - { label: Updated, name: updated, widget: datetime, type: date, required: false, i18n: duplicate }
+      - { label: Tags, name: tags, widget: list, required: false, i18n: duplicate }
+      - label: Cover image
+        name: cover
+        widget: image
+        required: false
+        i18n: duplicate
+        hint: Optional. Also used as the social preview image (1200×630 works best).
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: true
+        i18n: duplicate
+        hint: Drafts show up in local dev but are never published.
+      - { label: Body, name: body, widget: markdown, i18n: true }
+
+  # Projects: one JSON file per project and language, read by src/data/projects.js.
+  # The filename is the URL slug (/projects/<slug>) — set when the project is
+  # created from its title, and best left alone afterwards so links don't break.
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: /src/content/projects
+    extension: json
+    format: json
+    create: true
+    i18n: true
+    slug: '{{slug}}'
+    identifier_field: title
+    summary: '{{order}} · {{title}} ({{year}})'
+    sortable_fields:
+      fields: [order, year, title]
+      default: { field: order, direction: ascending }
+    view_filters:
+      - { label: Featured, field: featured, pattern: true }
+      - { label: In progress, field: finished, pattern: false }
+    fields:
+      - { label: Title, name: title, widget: string, i18n: true }
+      - label: Description
+        name: description
+        widget: text
+        i18n: true
+        hint: Shown in the project list and as the search/social description.
+      - label: Order
+        name: order
+        widget: number
+        value_type: int
+        i18n: duplicate
+        hint: Position in the list, ascending. Steps of 10 leave room to slot projects in between.
+      - { label: Year, name: year, widget: number, value_type: int, i18n: duplicate }
+      - { label: Featured on home page, name: featured, widget: boolean, default: false, i18n: duplicate }
+      - { label: Finished, name: finished, widget: boolean, default: true, i18n: duplicate, hint: Off shows an “in progress” marker. }
+      - { label: Tech, name: tech, widget: list, i18n: duplicate }
+      - { label: GitHub URL, name: github, widget: string, required: false, i18n: duplicate }
+      - { label: Live demo URL, name: demo, widget: string, required: false, i18n: duplicate }
+      - { label: Role, name: role, widget: string, required: false, i18n: true }
+      - { label: Duration, name: durationLabel, widget: string, required: false, i18n: true }
+      - { label: The problem, name: problem, widget: text, required: false, i18n: true }
+      - { label: The approach, name: approach, widget: text, required: false, i18n: true }
+      - { label: The outcome, name: outcome, widget: text, required: false, i18n: true }
+      - { label: Learnings, name: learnings, widget: list, required: false, i18n: true, field: { label: Learning, name: learning, widget: text } }
+      - label: Metrics
+        name: metrics
+        widget: list
+        required: false
+        i18n: true
+        hint: The numbers in the sidebar. Keep the same order in every language.
+        fields:
+          - { label: Label, name: label, widget: string, i18n: true }
+          - { label: Value, name: value, widget: string, i18n: true }

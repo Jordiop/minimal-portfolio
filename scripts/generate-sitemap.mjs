@@ -8,8 +8,8 @@ import { mkdir, readdir, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { projects } from '../src/data/projects.js'
 import { DEFAULT_LOCALE, LOCALE_TAGS, ORIGINS } from '../src/config/seo.js'
+import { DEFAULT_LOCALE as BLOG_DEFAULT_LOCALE, listPostMeta } from './lib/blog.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const pagesDir = resolve(root, 'src/pages')
@@ -41,13 +41,24 @@ const priorityFor = (path) => {
   if (path === '/') return '1.0'
   if (path === '/projects') return '0.9'
   if (path === '/about') return '0.8'
+  if (path === '/blog') return '0.8'
+  if (path.startsWith('/blog/')) return '0.6'
   if (path.startsWith('/projects/')) return '0.7'
   return '0.5'
 }
 
+/** Published posts only; translations share the English post's path. */
+const postPaths = (await listPostMeta(resolve(root, 'src/content/blog')))
+  .filter((post) => post.locale === BLOG_DEFAULT_LOCALE && !post.draft)
+  .map((post) => `/blog/${post.slug}`)
+
 const paths = [
   ...(await staticPaths()).sort(),
-  ...projects.map((project) => `/projects/${project.slug}`),
+  // English originals only (`slug.json`); `slug.es.json` etc. share the same path.
+  ...(await readdir(resolve(root, 'src/content/projects')))
+    .filter((file) => /^[^.]+\.json$/.test(file))
+    .map((file) => `/projects/${file.replace(/\.json$/, '')}`),
+  ...postPaths,
 ]
 
 const url = (origin, path) => `${origin}${path === '/' ? '/' : path}`

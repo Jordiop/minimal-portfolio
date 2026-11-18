@@ -120,6 +120,109 @@
   }
 }
 
+/* ---------------------------------------------------------------
+   Blog post body — rendered Markdown from src/content/blog.
+   --------------------------------------------------------------- */
+.prose {
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.prose > * + * { margin-top: 1.4em; }
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.prose h2 { margin-top: 2.6em; font-size: 1.5rem; }
+.prose h3 { margin-top: 2.2em; font-size: 1.2rem; }
+.prose h4 { margin-top: 2em; font-size: 1rem; }
+.prose h2 + *,
+.prose h3 + *,
+.prose h4 + * { margin-top: 0.8em; }
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.prose a:hover { text-decoration-thickness: 2px; }
+
+.prose strong { font-weight: 700; }
+
+.prose ul,
+.prose ol { padding-left: 1.5em; }
+.prose ul { list-style: none; }
+.prose ul > li { position: relative; }
+.prose ul > li::before {
+  content: "—";
+  position: absolute;
+  left: -1.5em;
+  color: var(--accent);
+}
+.prose ol { list-style: decimal; }
+.prose ol > li::marker { color: var(--faint); }
+.prose li + li { margin-top: 0.4em; }
+
+.prose blockquote {
+  border-left: 1px solid var(--accent);
+  padding-left: 1.25em;
+  color: var(--muted);
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin-block: 3em;
+}
+
+.prose img {
+  max-width: 100%;
+  border: 1px solid var(--rule);
+}
+
+.prose :not(pre) > code {
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  font-size: 0.92em;
+}
+
+.prose pre {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--surface) !important;
+  padding: 1.1em 1.25em;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Shiki emits both themes as CSS variables; pick one per site theme. */
+.prose pre.shiki span { color: var(--shiki-light); }
+.dark .prose pre.shiki span { color: var(--shiki-dark); }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.6em 0.75em 0.6em 0;
+  text-align: left;
+}
+.prose th {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+}
+
 /* Blinking typewriter caret. */
 @keyframes caret {
   0%, 45%  { opacity: 1; }

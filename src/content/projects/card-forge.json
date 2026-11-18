@@ -1,0 +1,18 @@
+{
+  "order": 40,
+  "year": 2026,
+  "featured": false,
+  "finished": true,
+  "tech": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Canvas"
+  ],
+  "github": "https://github.com/Jordiop/card-generator",
+  "demo": "https://card-generator-rosy.vercel.app",
+  "title": "Card Forge",
+  "description": "A trading card generator in the style of Pokémon cards. Feed it an image, a description and some attributes, then export the card as a PNG. Everything runs in the browser — nothing is uploaded and there is no server.",
+  "role": "Solo build",
+  "approach": "A Vite + React + TypeScript app with a shadcn/ui interface. The card itself is drawn on a canvas, which keeps it independent of the surrounding theme — the UI has pure-white and pure-black modes that follow the OS by default, but exports look identical either way."
+}
