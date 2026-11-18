@@ -129,3 +129,34 @@ collections:
         fields:
           - { label: Label, name: label, widget: string, i18n: true }
           - { label: Value, name: value, widget: string, i18n: true }
+
+  # The CD shelf on /music: one JSON file per album, read by src/data/albums.js.
+  # Albums are shelved alphabetically by artist, so there's no order field.
+  - name: music
+    label: CD shelf
+    label_singular: CD
+    folder: /src/content/music
+    extension: json
+    format: json
+    create: true
+    i18n: false
+    slug: '{{artist}}-{{title}}'
+    identifier_field: title
+    summary: '{{artist}} — {{title}} ({{year}})'
+    media_folder: /public/media/music
+    public_folder: /media/music
+    sortable_fields:
+      fields: [artist, year, title]
+      default: { field: artist, direction: ascending }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Artist, name: artist, widget: string }
+      - { label: Year, name: year, widget: number, value_type: int }
+      - { label: Genre, name: genre, widget: string, hint: Used for the filter above the shelf — reuse an existing one where you can. }
+      - { label: Cover, name: cover, widget: image, hint: Square works best. 640×640 is plenty. }
+      - { label: Spotify URL, name: spotifyUrl, widget: string, required: false }
+      - label: Spine colour
+        name: spine
+        widget: color
+        required: false
+        hint: Optional. Leave empty and the spine takes its colour from the cover.

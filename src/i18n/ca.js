@@ -106,13 +106,17 @@ export default {
   },
   music: {
     heading: 'Àlbums preferits',
-    lede: 'Els meus discs favorits.',
+    lede: 'Els CDs de la meva prestatgeria. Treu-ne un.',
     all: 'Tots',
     nowPlaying: 'Sonant ara',
     checking: 'Comprovant…',
     unavailable: 'Spotify no està disponible ara mateix.',
     nothingPlaying: 'Ara mateix no sona res.',
     albumCount: '{shown} de {total} àlbums',
+    fromShelf: 'de la prestatgeria',
+    inPlayer: 'Ara mateix al reproductor',
+    listen: 'Escoltar a Spotify ↗',
+    pickOne: 'Treu un CD de la prestatgeria.',
   },
   gallery: {
     heading: 'Galeria',

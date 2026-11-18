@@ -106,13 +106,17 @@ export default {
   },
   music: {
     heading: 'Favourite albums',
-    lede: 'Records that live rent-free in my head.',
+    lede: 'The CDs on my shelf. Pull one out.',
     all: 'All',
     nowPlaying: 'Now playing',
     checking: 'Checking…',
     unavailable: 'Spotify is not reachable right now.',
     nothingPlaying: 'Nothing playing right now.',
     albumCount: '{shown} of {total} albums',
+    fromShelf: 'from the shelf',
+    inPlayer: 'In the player right now',
+    listen: 'Listen on Spotify ↗',
+    pickOne: 'Pick a CD off the shelf.',
   },
   gallery: {
     heading: 'Gallery',

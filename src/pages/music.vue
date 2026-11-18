@@ -4,95 +4,96 @@ export const route = { titleKey: 'titles.music', descriptionKey: 'seo.music', la
 
 <script setup>
 import { computed, ref } from 'vue'
-import { albums } from '@/data/albums'
+import { albums, findShelved } from '@/data/albums'
 import { useI18n } from '@/i18n'
+import { useSpotifyNowPlaying } from '@/composables/useSpotifyNowPlaying'
+import CdShelf from '@/components/CdShelf.vue'
 import NowPlaying from '@/components/NowPlaying.vue'
 import PageHead from '@/components/PageHead.vue'
 
 const { t } = useI18n()
+const { track, loading, error, configured } = useSpotifyNowPlaying()
 
-const active = ref(null)
+const genre = ref(null)
+const open = ref(null)
 
-const genres = computed(() => [...new Set(albums.map((album) => album.genre))])
+const genres = computed(() => [...new Set(albums.map((album) => album.genre))].sort())
 
-const shown = computed(() =>
-  active.value === null ? albums : albums.filter((album) => album.genre === active.value),
+/** Filtering dims the other cases instead of taking them off the shelf. */
+const highlighted = computed(() =>
+  genre.value === null
+    ? null
+    : new Set(albums.filter((album) => album.genre === genre.value).map((album) => album.id)),
 )
 
-const pad = (n) => String(n + 1).padStart(2, '0')
+const playing = computed(() => findShelved(track.value))
+const openAlbum = computed(() => albums.find((album) => album.id === open.value) ?? null)
 </script>
 
 <template>
   <div class="rise">
-    <PageHead
-      :index="`04 — ${t('titles.music')}`"
-      :title="t('music.heading')"
-      :lede="t('music.lede')"
-    />
+    <PageHead :index="`04 — ${t('titles.music')}`" :title="t('music.heading')" :lede="t('music.lede')" />
 
-    <NowPlaying />
+    <NowPlaying
+      v-if="configured"
+      :track="track"
+      :loading="loading"
+      :error="error"
+      :from-shelf="Boolean(playing)"
+    />
 
     <section class="flex flex-wrap gap-x-4 gap-y-2 border-b border-rule py-4">
       <button
         type="button"
         class="text-[11px] uppercase tracking-[0.18em] transition-colors duration-300"
-        :class="active === null ? 'text-accent' : 'text-muted hover:text-ink'"
-        @click="active = null"
+        :class="genre === null ? 'text-accent' : 'text-muted hover:text-ink'"
+        @click="genre = null"
       >
-        {{ active === null ? '● ' : '○ ' }}{{ t('music.all') }}
+        {{ genre === null ? '● ' : '○ ' }}{{ t('music.all') }}
       </button>
-
       <button
-        v-for="genre in genres"
-        :key="genre"
+        v-for="item in genres"
+        :key="item"
         type="button"
         class="text-[11px] uppercase tracking-[0.18em] transition-colors duration-300"
-        :class="active === genre ? 'text-accent' : 'text-muted hover:text-ink'"
-        @click="active = genre"
+        :class="genre === item ? 'text-accent' : 'text-muted hover:text-ink'"
+        @click="genre = item"
       >
-        {{ active === genre ? '● ' : '○ ' }}{{ genre }}
+        {{ genre === item ? '● ' : '○ ' }}{{ item }}
       </button>
     </section>
 
-    <!-- Track-listing layout: the covers are the only images on the page, so they earn the space. -->
-    <section class="pt-4">
-      <a
-        v-for="(album, index) in shown"
-        :key="album.title"
-        :href="album.spotifyUrl || undefined"
-        :target="album.spotifyUrl ? '_blank' : undefined"
-        rel="noreferrer"
-        class="group grid w-full grid-cols-[2.5rem_3.5rem_1fr_auto] items-center gap-x-4 border-b border-rule py-4 text-left transition-colors duration-300 hover:border-accent sm:grid-cols-[3rem_4.5rem_1fr_auto] sm:gap-x-6"
-      >
-        <span class="text-[11px] text-faint transition-colors duration-300 group-hover:text-accent">
-          {{ pad(index) }}
-        </span>
+    <section class="pt-8">
+      <CdShelf
+        v-model:open="open"
+        :albums="albums"
+        :highlighted="highlighted"
+        :playing-id="playing?.id ?? null"
+        :in-player-label="t('music.inPlayer')"
+      />
 
-        <img
-          :src="album.coverUrl"
-          :alt="`${album.title} — ${album.artist}`"
-          loading="lazy"
-          class="aspect-square w-full border border-rule object-cover grayscale transition-[filter,transform] duration-500 group-hover:scale-105 group-hover:grayscale-0"
-        />
-
-        <span class="min-w-0">
-          <span
-            class="block truncate font-bold tracking-tight transition-colors duration-300 group-hover:text-accent"
+      <!-- What's in your hand. -->
+      <div class="flex min-h-[4.5rem] flex-wrap items-baseline gap-x-6 gap-y-1 border-b border-rule pb-6 pt-2" aria-live="polite">
+        <template v-if="openAlbum">
+          <p class="text-xl font-bold tracking-tight">{{ openAlbum.title }}</p>
+          <p class="text-[13px] text-muted">{{ openAlbum.artist }}</p>
+          <p class="label">{{ openAlbum.genre }} · {{ openAlbum.year }}</p>
+          <a
+            v-if="openAlbum.spotifyUrl"
+            :href="openAlbum.spotifyUrl"
+            target="_blank"
+            rel="noreferrer"
+            class="link-draw text-[13px] text-accent"
           >
-            {{ album.title }}
-          </span>
-          <span class="block truncate text-[13px] text-muted">{{ album.artist }}</span>
-        </span>
-
-        <span class="flex items-baseline gap-3 text-[11px] uppercase tracking-[0.18em] text-faint">
-          <span class="hidden sm:inline">{{ album.genre }}</span>
-          <span>{{ album.year }}</span>
-        </span>
-      </a>
+            {{ t('music.listen') }}
+          </a>
+        </template>
+        <p v-else class="text-[13px] text-muted">{{ t('music.pickOne') }}</p>
+      </div>
     </section>
 
     <p class="pt-6 text-[13px] text-muted">
-      {{ t('music.albumCount', { shown: shown.length, total: albums.length }) }}
+      {{ t('music.albumCount', { shown: highlighted ? highlighted.size : albums.length, total: albums.length }) }}
     </p>
   </div>
 </template>

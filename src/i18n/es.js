@@ -106,13 +106,17 @@ export default {
   },
   music: {
     heading: 'Álbumes favoritos',
-    lede: 'Discos que viven gratis en mi cabeza.',
+    lede: 'Los CDs de mi estantería. Saca uno.',
     all: 'Todos',
     nowPlaying: 'Sonando ahora',
     checking: 'Comprobando…',
     unavailable: 'Spotify no está disponible ahora mismo.',
     nothingPlaying: 'Ahora mismo no suena nada.',
     albumCount: '{shown} de {total} álbumes',
+    fromShelf: 'de la estantería',
+    inPlayer: 'Ahora mismo en el reproductor',
+    listen: 'Escuchar en Spotify ↗',
+    pickOne: 'Saca un CD de la estantería.',
   },
   gallery: {
     heading: 'Galería',
