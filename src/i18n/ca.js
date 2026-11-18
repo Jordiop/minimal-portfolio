@@ -45,8 +45,6 @@ export default {
   projects: {
     heading: 'Els meus projectes',
     lede: 'Una col·lecció dels meus últims treballs i experiments.',
-    all: 'Tots',
-    empty: 'Encara no hi ha res construït amb “{filter}”.',
     inProgress: 'En curs',
   },
   blog: {

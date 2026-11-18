@@ -1,5 +1,5 @@
 <script>
-export const route = { titleKey: 'titles.music', descriptionKey: 'seo.music', labelKey: 'nav.music', nav: true, order: 5 }
+export const route = { titleKey: 'titles.music', descriptionKey: 'seo.music', labelKey: 'nav.music', icon: 'disc', nav: true, order: 5 }
 </script>
 
 <script setup>

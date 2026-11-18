@@ -45,8 +45,6 @@ export default {
   projects: {
     heading: 'Mis proyectos',
     lede: 'Una colección de mis últimos trabajos y experimentos.',
-    all: 'Todos',
-    empty: 'Todavía no hay nada construido con “{filter}”.',
     inProgress: 'En curso',
   },
   blog: {

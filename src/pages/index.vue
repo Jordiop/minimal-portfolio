@@ -1,5 +1,5 @@
 <script>
-export const route = { titleKey: 'titles.home', descriptionKey: 'seo.home', labelKey: 'nav.home', nav: true, order: 1 }
+export const route = { titleKey: 'titles.home', descriptionKey: 'seo.home', labelKey: 'nav.home', icon: 'house', nav: true, order: 1 }
 </script>
 
 <script setup>
@@ -127,12 +127,7 @@ onMounted(() => {
         </RouterLink>
       </div>
 
-      <ProjectRow
-        v-for="(project, index) in featured"
-        :key="project.slug"
-        :project="project"
-        :index="index"
-      />
+      <ProjectRow v-for="project in featured" :key="project.slug" :project="project" />
     </section>
 
     <!-- Contact -->

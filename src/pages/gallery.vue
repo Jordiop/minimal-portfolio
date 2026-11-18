@@ -1,5 +1,5 @@
 <script>
-export const route = { titleKey: 'titles.gallery', descriptionKey: 'seo.gallery', labelKey: 'nav.gallery', nav: true, order: 6 }
+export const route = { titleKey: 'titles.gallery', descriptionKey: 'seo.gallery', labelKey: 'nav.gallery', icon: 'camera', nav: true, order: 6 }
 </script>
 
 <script setup>

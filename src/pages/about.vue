@@ -1,5 +1,5 @@
 <script>
-export const route = { titleKey: 'titles.about', descriptionKey: 'seo.about', labelKey: 'nav.about', nav: true, order: 4 }
+export const route = { titleKey: 'titles.about', descriptionKey: 'seo.about', labelKey: 'nav.about', icon: 'user', nav: true, order: 4 }
 </script>
 
 <script setup>

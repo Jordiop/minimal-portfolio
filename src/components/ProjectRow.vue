@@ -3,23 +3,16 @@ import { useI18n } from '@/i18n'
 
 defineProps({
   project: { type: Object, required: true },
-  index: { type: Number, required: true },
 })
 
 const { t, pick } = useI18n()
-
-const pad = (n) => String(n + 1).padStart(2, '0')
 </script>
 
 <template>
   <RouterLink
     :to="`/projects/${project.slug}`"
-    class="group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-4 border-b border-rule py-6 transition-colors duration-300 hover:border-accent sm:grid-cols-[3rem_1fr_auto] sm:gap-x-6"
+    class="group grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-rule py-6 transition-colors duration-300 hover:border-accent sm:gap-x-6"
   >
-    <span class="text-[11px] text-faint transition-colors duration-300 group-hover:text-accent">
-      {{ pad(index) }}
-    </span>
-
     <span class="min-w-0">
       <span class="flex flex-wrap items-baseline gap-x-3">
         <span
