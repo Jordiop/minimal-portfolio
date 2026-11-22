@@ -1,0 +1,28 @@
+{
+  "order": 35,
+  "year": 2026,
+  "featured": false,
+  "finished": true,
+  "cover": "/media/projects/consumption-1.webp",
+  "tech": [
+    "Python",
+    "JavaScript",
+    "SQLite",
+    "PostgreSQL",
+    "Docker"
+  ],
+  "github": "https://github.com/Jordiop/consumption",
+  "title": "Casa · Energia",
+  "description": "Un panell per a endolls Tapo amb mesura de consum: el consum en directe sobre el plànol de casa teva, un historial que no es perd i el cost real amb el preu PVPC de cada hora.",
+  "role": "Projecte en solitari",
+  "problem": "Els endolls Tapo mesuren el consum, però només recorden una setmana per hores i uns tres mesos per dies, i un reset ho esborra tot. L'app oficial tampoc no sap on és cada endoll ni quant costa realment aquesta energia.",
+  "approach": "Un backend en Python sondeja els endolls cada pocs segons i en copia l'historial a SQLite o Postgres per no perdre res. El front dibuixa la casa amb un editor de parets i sales, hi col·loca cada endoll i l'uneix a la seva targeta amb cables animats. El cost fa servir els preus PVPC per hores de Red Eléctrica amb el repartiment per períodes 2.0TD, i dona consells sobre les hores més barates. Es desplega amb Docker Compose i un script per SSH.",
+  "gallery": [
+    {
+      "image": "/media/projects/consumption-2.webp"
+    },
+    {
+      "image": "/media/projects/consumption-3.webp"
+    }
+  ]
+}

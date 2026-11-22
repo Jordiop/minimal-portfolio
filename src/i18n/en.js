@@ -36,11 +36,6 @@ export default {
     connect: 'Connect',
     seeMyWork: 'See my work →',
     getInTouch: 'Get in touch',
-    featuredWork: 'Featured work',
-    allProjects: 'All projects →',
-    contactHeading: 'Get in touch',
-    contactLine: 'Got something you want built or fixed?',
-    sayHello: 'Say hello →',
   },
   projects: {
     heading: 'My projects',
@@ -66,6 +61,7 @@ export default {
     notFoundLede: 'That post does not exist or has been taken down.',
   },
   project: {
+    gallery: 'Gallery',
     year: 'Year',
     role: 'Role',
     duration: 'Duration',
@@ -130,10 +126,6 @@ export default {
     lede: "This page doesn't exist.",
     backHome: '← Back home',
     seeProjects: 'See the projects',
-  },
-  footer: {
-    elsewhere: 'Elsewhere',
-    email: 'Email',
   },
   theme: {
     light: 'light',

@@ -1,0 +1,23 @@
+{
+  "order": 25,
+  "year": 2026,
+  "featured": false,
+  "finished": false,
+  "cover": "/media/projects/termy-1.webp",
+  "tech": [
+    "Rust",
+    "wgpu",
+    "winit",
+    "egui",
+    "alacritty_terminal"
+  ],
+  "title": "Termy",
+  "description": "Un terminal natiu renderitzat per GPU pensat per treballar amb agents d'IA: sessions agrupades per projecte, pestanyes i divisions, i un monitor de tokens 100 % local per a Claude Code, Codex i Gemini CLI. Zero telemetria: no hi ha ni una sola dependència de xarxa.",
+  "role": "Projecte en solitari",
+  "approach": "Escrit en Rust sobre wgpu, així que renderitza amb Metal a macOS, DirectX 12 a Windows i Vulkan a Linux. L'emulació de terminal ve d'alacritty_terminal, amb una instància per sessió; el PTY, de portable-pty; el text, de glyphon, i el panell d'ajustos, d'egui. La configuració viu en un TOML que es recarrega en calent, i desar des del panell respecta els teus comentaris i el teu format.",
+  "gallery": [
+    {
+      "image": "/media/projects/termy-2.webp"
+    }
+  ]
+}

@@ -3,10 +3,11 @@ export const route = { titleKey: 'titles.gallery', descriptionKey: 'seo.gallery'
 </script>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useGallery } from '@/composables/useGallery'
 import { useI18n } from '@/i18n'
 import PageHead from '@/components/PageHead.vue'
+import ImageLightbox from '@/components/ImageLightbox.vue'
 
 const { t } = useI18n()
 const { photos, isLoading, errorKey, fetchPhotos } = useGallery()
@@ -20,25 +21,7 @@ function open(index) {
   lightbox.value = index
 }
 
-function step(delta) {
-  if (lightbox.value === null) return
-  const count = photos.value.length
-  lightbox.value = (lightbox.value + delta + count) % count
-}
-
-function onKey(event) {
-  if (lightbox.value === null) return
-  if (event.key === 'Escape') lightbox.value = null
-  if (event.key === 'ArrowRight') step(1)
-  if (event.key === 'ArrowLeft') step(-1)
-}
-
-onMounted(() => {
-  fetchPhotos()
-  window.addEventListener('keydown', onKey)
-})
-
-onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
+onMounted(fetchPhotos)
 </script>
 
 <template>
@@ -81,40 +64,6 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
       </div>
     </section>
 
-    <!-- Lightbox -->
-    <Teleport to="body">
-      <div
-        v-if="lightbox !== null"
-        class="fixed inset-0 z-50 flex flex-col bg-paper/97 p-4 sm:p-8"
-        role="dialog"
-        aria-modal="true"
-        @click.self="lightbox = null"
-      >
-        <div class="flex items-baseline justify-between border-b border-rule pb-3">
-          <p class="label">{{ photos[lightbox].caption }}</p>
-          <button type="button" class="label hover:text-accent" @click="lightbox = null">
-            {{ t('gallery.close') }}
-          </button>
-        </div>
-
-        <div class="flex min-h-0 flex-1 items-center justify-center py-6">
-          <img
-            :src="photos[lightbox].url"
-            :alt="photos[lightbox].caption"
-            class="max-h-full max-w-full object-contain"
-          />
-        </div>
-
-        <div class="flex items-center justify-between border-t border-rule pt-3">
-          <button type="button" class="label hover:text-accent" @click="step(-1)">
-            {{ t('gallery.previous') }}
-          </button>
-          <span class="label">{{ lightbox + 1 }} / {{ photos.length }}</span>
-          <button type="button" class="label hover:text-accent" @click="step(1)">
-            {{ t('gallery.next') }}
-          </button>
-        </div>
-      </div>
-    </Teleport>
+    <ImageLightbox v-model="lightbox" :items="photos" />
   </div>
 </template>

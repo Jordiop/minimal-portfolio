@@ -36,11 +36,6 @@ export default {
     connect: 'Contacto',
     seeMyWork: 'Ver mi trabajo →',
     getInTouch: 'Hablemos',
-    featuredWork: 'Trabajo destacado',
-    allProjects: 'Todos los proyectos →',
-    contactHeading: 'Hablemos',
-    contactLine: '¿Tienes algo que quieras construir o arreglar?',
-    sayHello: 'Escríbeme →',
   },
   projects: {
     heading: 'Mis proyectos',
@@ -66,6 +61,7 @@ export default {
     notFoundLede: 'Ese artículo no existe o ha sido retirado.',
   },
   project: {
+    gallery: 'Galería',
     year: 'Año',
     role: 'Rol',
     duration: 'Duración',
@@ -130,10 +126,6 @@ export default {
     lede: 'Esta página no existe.',
     backHome: '← Volver al inicio',
     seeProjects: 'Ver los proyectos',
-  },
-  footer: {
-    elsewhere: 'En otros sitios',
-    email: 'Correo',
   },
   theme: {
     light: 'claro',

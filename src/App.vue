@@ -1,7 +1,6 @@
 <script setup>
 import { useSeoHead } from '@/composables/useSeo'
 import SiteHeader from '@/components/SiteHeader.vue'
-import SiteFooter from '@/components/SiteFooter.vue'
 
 // Single writer for <title>, meta, canonical and hreflang.
 useSeoHead()
@@ -18,7 +17,7 @@ useSeoHead()
 
     <SiteHeader />
 
-    <main id="main" class="shell flex-1 pt-16 sm:pt-24">
+    <main id="main" class="shell flex-1 pt-16 pb-16 sm:pt-24 sm:pb-24">
       <RouterView v-slot="{ Component, route }">
         <Transition name="page" mode="out-in">
           <component :is="Component" :key="route.path" />
@@ -26,6 +25,5 @@ useSeoHead()
       </RouterView>
     </main>
 
-    <SiteFooter />
   </div>
 </template>

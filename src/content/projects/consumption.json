@@ -1,0 +1,28 @@
+{
+  "order": 35,
+  "year": 2026,
+  "featured": false,
+  "finished": true,
+  "cover": "/media/projects/consumption-1.webp",
+  "tech": [
+    "Python",
+    "JavaScript",
+    "SQLite",
+    "PostgreSQL",
+    "Docker"
+  ],
+  "github": "https://github.com/Jordiop/consumption",
+  "title": "Home Energy",
+  "description": "A dashboard for Tapo smart plugs with power metering: live consumption drawn over your home's floor plan, a history that never gets lost and the real cost using each hour's PVPC electricity price.",
+  "role": "Solo build",
+  "problem": "Tapo plugs measure consumption, but they only remember about a week by the hour and three months by the day, and a reset wipes everything. The official app also has no idea where each plug is or what that energy actually costs.",
+  "approach": "A Python backend polls the plugs every few seconds and copies their history into SQLite or Postgres, so nothing is lost. The front end draws the house with a wall-and-room editor, places each plug on it and wires it to its card with animated cables. Costs use Red Eléctrica's hourly PVPC prices with the 2.0TD period split, plus tips on the cheapest hours. Ships with Docker Compose and an SSH deploy script.",
+  "gallery": [
+    {
+      "image": "/media/projects/consumption-2.webp"
+    },
+    {
+      "image": "/media/projects/consumption-3.webp"
+    }
+  ]
+}

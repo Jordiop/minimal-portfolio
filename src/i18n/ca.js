@@ -36,11 +36,6 @@ export default {
     connect: 'Contacte',
     seeMyWork: 'Veure la meva feina →',
     getInTouch: 'Xerrem',
-    featuredWork: 'Feina destacada',
-    allProjects: 'Tots els projectes →',
-    contactHeading: 'Xerrem',
-    contactLine: 'Tens alguna cosa que vulguis construir o arreglar?',
-    sayHello: 'Escriu-me →',
   },
   projects: {
     heading: 'Els meus projectes',
@@ -66,6 +61,7 @@ export default {
     notFoundLede: 'Aquest article no existeix o ha estat retirat.',
   },
   project: {
+    gallery: 'Galeria',
     year: 'Any',
     role: 'Rol',
     duration: 'Durada',
@@ -130,10 +126,6 @@ export default {
     lede: 'Aquesta pàgina no existeix.',
     backHome: "← Tornar a l'inici",
     seeProjects: 'Veure els projectes',
-  },
-  footer: {
-    elsewhere: 'En altres llocs',
-    email: 'Correu',
   },
   theme: {
     light: 'clar',

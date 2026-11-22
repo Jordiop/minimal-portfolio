@@ -3,6 +3,7 @@
   "year": 2026,
   "featured": true,
   "finished": true,
+  "cover": "/media/projects/forza-telemetry-1.webp",
   "tech": [
     "Nuxt",
     "Vue",
@@ -14,5 +15,11 @@
   "title": "Forza Telemetry",
   "description": "Records Forza Horizon's UDP telemetry into Postgres and renders it as a dashboard — a live HUD while you drive, plus session history with synchronised charts and a track map coloured by speed. One Nuxt app, no second process.",
   "role": "Solo build",
-  "approach": "Forza broadcasts a fixed binary struct over UDP at around 60 Hz through its built-in \"Data Out\" feature — no game modding and no memory reading. The app listens for that stream, parses it, stores it and draws it. The UDP listener runs inside the Nuxt server itself, so arming a recording from the dashboard takes effect on the very next packet, and the live HUD streams over SSE without any recording running at all."
+  "approach": "Forza broadcasts a fixed binary struct over UDP at around 60 Hz through its built-in \"Data Out\" feature — no game modding and no memory reading. The app listens for that stream, parses it, stores it and draws it. The UDP listener runs inside the Nuxt server itself, so arming a recording from the dashboard takes effect on the very next packet, and the live HUD streams over SSE without any recording running at all.",
+  "gallery": [
+    {
+      "image": "/media/projects/forza-telemetry-2.webp",
+      "caption": "Session detail: speed, RPM, throttle and brake, g-force, steering and the track map"
+    }
+  ]
 }

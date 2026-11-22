@@ -89,6 +89,9 @@ collections:
     slug: '{{slug}}'
     identifier_field: title
     summary: '{{order}} · {{title}} ({{year}})'
+    # Project images live next to the blog's, under /media/projects.
+    media_folder: /public/media/projects
+    public_folder: /media/projects
     sortable_fields:
       fields: [order, year, title]
       default: { field: order, direction: ascending }
@@ -111,6 +114,21 @@ collections:
       - { label: Year, name: year, widget: number, value_type: int, i18n: duplicate }
       - { label: Featured on home page, name: featured, widget: boolean, default: false, i18n: duplicate }
       - { label: Finished, name: finished, widget: boolean, default: true, i18n: duplicate, hint: Off shows an “in progress” marker. }
+      - label: Cover image
+        name: cover
+        widget: image
+        required: false
+        i18n: duplicate
+        hint: The card in the projects grid and the top of the project page. 16:10 works best (1600×1000).
+      - label: Gallery
+        name: gallery
+        widget: list
+        required: false
+        i18n: true
+        hint: Extra screenshots shown on the project page. Keep the same order in every language — only the caption is translated.
+        fields:
+          - { label: Image, name: image, widget: image, i18n: duplicate }
+          - { label: Caption, name: caption, widget: string, required: false, i18n: true }
       - { label: Tech, name: tech, widget: list, i18n: duplicate }
       - { label: GitHub URL, name: github, widget: string, required: false, i18n: duplicate }
       - { label: Live demo URL, name: demo, widget: string, required: false, i18n: duplicate }

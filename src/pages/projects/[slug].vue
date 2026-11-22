@@ -3,12 +3,13 @@ export const route = { titleKey: 'titles.project' }
 </script>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { findProject, siblings } from '@/data/projects'
 import { useI18n } from '@/i18n'
 import { useSeo } from '@/composables/useSeo'
 import PageHead from '@/components/PageHead.vue'
+import ImageLightbox from '@/components/ImageLightbox.vue'
 
 const currentRoute = useRoute()
 const { t, pick } = useI18n()
@@ -25,6 +26,19 @@ const sections = computed(() => {
     { heading: t('project.outcome'), body: pick(project.value.outcome) },
   ].filter((section) => section.body)
 })
+
+/** Cover first, then the gallery: one sequence for the lightbox to page through. */
+const images = computed(() => {
+  if (!project.value) return []
+  const title = pick(project.value.title)
+  const gallery = project.value.gallery.map((item, index) => ({
+    url: item.image,
+    caption: pick(item.caption) || `${title} — ${index + 2}`,
+  }))
+  return project.value.cover ? [{ url: project.value.cover, caption: title }, ...gallery] : gallery
+})
+const galleryOffset = computed(() => (project.value?.cover ? 1 : 0))
+const lightbox = ref(null)
 
 const learnings = computed(() => pick(project.value?.learnings) ?? [])
 
@@ -46,6 +60,20 @@ useSeo(() => ({
         {{ t('project.back') }}
       </RouterLink>
     </PageHead>
+
+    <!-- Cover -->
+    <button
+      v-if="project.cover"
+      type="button"
+      class="group mt-10 block w-full cursor-zoom-in overflow-hidden border border-rule"
+      @click="lightbox = 0"
+    >
+      <img
+        :src="project.cover"
+        :alt="pick(project.title)"
+        class="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+      />
+    </button>
 
     <!-- Spec table -->
     <section class="grid gap-x-8 gap-y-6 border-b border-rule py-8 sm:grid-cols-4">
@@ -133,6 +161,36 @@ useSeo(() => ({
         </div>
       </aside>
     </section>
+
+    <!-- Gallery -->
+    <section v-if="project.gallery.length" class="border-t border-rule py-14">
+      <h2 class="label mb-6">{{ t('project.gallery') }}</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <figure
+          v-for="(item, index) in project.gallery"
+          :key="item.image"
+          :class="project.gallery.length % 2 === 1 && index === 0 ? 'sm:col-span-2' : ''"
+        >
+          <button
+            type="button"
+            class="group block w-full cursor-zoom-in overflow-hidden border border-rule transition-colors duration-300 hover:border-accent"
+            @click="lightbox = index + galleryOffset"
+          >
+            <img
+              :src="item.image"
+              :alt="images[index + galleryOffset].caption"
+              loading="lazy"
+              class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
+          </button>
+          <figcaption v-if="pick(item.caption)" class="mt-2 text-[13px] text-muted">
+            {{ pick(item.caption) }}
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <ImageLightbox v-model="lightbox" :items="images" />
 
     <!-- Prev / next -->
     <nav class="grid border-t border-rule sm:grid-cols-2">

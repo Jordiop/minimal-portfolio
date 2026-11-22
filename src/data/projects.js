@@ -18,6 +18,8 @@
  *   outcome       /
  *   learnings     bulleted list
  *   metrics       the numbers shown in the sidebar
+ *   cover         main image: the grid card and the top of the project page
+ *   gallery       extra images [{ image, caption }], shown on the project page
  */
 const files = import.meta.glob('/src/content/projects/*.json', { eager: true, import: 'default' })
 
@@ -59,6 +61,18 @@ function merge(slug, versions) {
     return merged
   })
 
+  // Gallery images are shared; only the captions are translated, zipped by position.
+  project.gallery = (en.gallery ?? [])
+    .filter((item) => item?.image)
+    .map((item, index) => {
+      const caption = { en: item.caption ?? '' }
+      for (const [locale, data] of Object.entries(translations)) {
+        const translated = data.gallery?.[index]?.caption
+        if (translated) caption[locale] = translated
+      }
+      return { image: item.image, caption }
+    })
+
   return project
 }
 
@@ -69,10 +83,6 @@ export const projects = Object.entries(bySlug)
 
 export function findProject(slug) {
   return projects.find((project) => project.slug === slug) ?? null
-}
-
-export function featuredProjects() {
-  return projects.filter((project) => project.featured)
 }
 
 export function siblings(slug) {

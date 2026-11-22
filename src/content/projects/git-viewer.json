@@ -2,7 +2,8 @@
   "order": 20,
   "year": 2026,
   "featured": true,
-  "finished": false,
+  "finished": true,
+  "cover": "/media/projects/git-viewer.webp",
   "tech": [
     "Tauri",
     "Rust",

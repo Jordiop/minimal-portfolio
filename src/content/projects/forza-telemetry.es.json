@@ -3,6 +3,7 @@
   "year": 2026,
   "featured": true,
   "finished": true,
+  "cover": "/media/projects/forza-telemetry-1.webp",
   "tech": [
     "Nuxt",
     "Vue",
@@ -14,5 +15,11 @@
   "title": "Forza Telemetry",
   "description": "Registra la telemetría UDP de Forza Horizon en Postgres y la muestra como un panel: un HUD en directo mientras conduces, más el historial de sesiones con gráficas sincronizadas y un mapa del circuito coloreado por velocidad. Una sola app de Nuxt, sin un segundo proceso.",
   "role": "Proyecto en solitario",
-  "approach": "Forza emite una estructura binaria fija por UDP a unos 60 Hz mediante su función integrada \"Data Out\": sin modificar el juego y sin leer memoria. La app escucha ese flujo, lo parsea, lo guarda y lo dibuja. El receptor UDP corre dentro del propio servidor de Nuxt, así que activar una grabación desde el panel surte efecto en el siguiente paquete, y el HUD en directo se transmite por SSE sin necesidad de estar grabando."
+  "approach": "Forza emite una estructura binaria fija por UDP a unos 60 Hz mediante su función integrada \"Data Out\": sin modificar el juego y sin leer memoria. La app escucha ese flujo, lo parsea, lo guarda y lo dibuja. El receptor UDP corre dentro del propio servidor de Nuxt, así que activar una grabación desde el panel surte efecto en el siguiente paquete, y el HUD en directo se transmite por SSE sin necesidad de estar grabando.",
+  "gallery": [
+    {
+      "image": "/media/projects/forza-telemetry-2.webp",
+      "caption": "Detalle de una sesión: velocidad, RPM, acelerador y freno, fuerzas g, dirección y mapa del circuito"
+    }
+  ]
 }

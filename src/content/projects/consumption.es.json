@@ -1,0 +1,28 @@
+{
+  "order": 35,
+  "year": 2026,
+  "featured": false,
+  "finished": true,
+  "cover": "/media/projects/consumption-1.webp",
+  "tech": [
+    "Python",
+    "JavaScript",
+    "SQLite",
+    "PostgreSQL",
+    "Docker"
+  ],
+  "github": "https://github.com/Jordiop/consumption",
+  "title": "Casa · Energía",
+  "description": "Un panel para enchufes Tapo con medición de consumo: el consumo en directo sobre el plano de tu casa, un historial que no se pierde y el coste real con el precio PVPC de cada hora.",
+  "role": "Proyecto en solitario",
+  "problem": "Los enchufes Tapo miden el consumo, pero solo recuerdan una semana por horas y unos tres meses por días, y un reset lo borra todo. La app oficial tampoco sabe dónde está cada enchufe ni cuánto cuesta realmente esa energía.",
+  "approach": "Un backend en Python sondea los enchufes cada pocos segundos y copia su historial a SQLite o Postgres para no perder nada. El front dibuja la casa con un editor de paredes y salas, coloca cada enchufe en ella y lo une a su tarjeta con cables animados. El coste usa los precios PVPC por horas de Red Eléctrica con el reparto por periodos 2.0TD, y da consejos sobre las horas más baratas. Se despliega con Docker Compose y un script por SSH.",
+  "gallery": [
+    {
+      "image": "/media/projects/consumption-2.webp"
+    },
+    {
+      "image": "/media/projects/consumption-3.webp"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ export const route = { titleKey: 'titles.projects', descriptionKey: 'seo.project
 import { projects } from '@/data/projects'
 import { useI18n } from '@/i18n'
 import PageHead from '@/components/PageHead.vue'
-import ProjectRow from '@/components/ProjectRow.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 
 const { t } = useI18n()
 </script>
@@ -19,8 +19,8 @@ const { t } = useI18n()
       :lede="t('projects.lede')"
     />
 
-    <section class="pt-4">
-      <ProjectRow v-for="project in projects" :key="project.slug" :project="project" />
+    <section class="grid gap-x-8 gap-y-14 pt-10 sm:grid-cols-2">
+      <ProjectCard v-for="project in projects" :key="project.slug" :project="project" />
     </section>
   </div>
 </template>

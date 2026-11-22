@@ -3,6 +3,7 @@
   "year": 2026,
   "featured": true,
   "finished": true,
+  "cover": "/media/projects/portfolio-v2.webp",
   "tech": [
     "Vue 3",
     "Vite",

@@ -5,15 +5,11 @@ export const route = { titleKey: 'titles.home', descriptionKey: 'seo.home', labe
 <script setup>
 import { onMounted, ref } from 'vue'
 import { site } from '@/data/site'
-import { featuredProjects } from '@/data/projects'
 import { useI18n } from '@/i18n'
-import ProjectRow from '@/components/ProjectRow.vue'
 import ForestScene from '@/components/ForestScene.vue'
 import portrait from '@/assets/images/meirl.jpg'
 
 const { t, pick } = useI18n()
-
-const featured = featuredProjects()
 
 // Typewriter, in keeping with the face the whole site is set in.
 const typed = ref('')
@@ -44,99 +40,95 @@ onMounted(() => {
 
 <template>
   <div class="rise">
-    <!-- Hero -->
-    <section class="relative isolate flex min-h-[78svh] flex-col justify-center border-b border-rule pb-14">
+    <!-- Hero: the whole landing fits in one screen -->
+    <section
+      class="relative isolate flex min-h-[calc(100svh-12rem)] flex-col justify-center pb-12 sm:min-h-[calc(100svh-14rem)]"
+    >
       <ForestScene />
 
-      <p class="label mb-8">{{ pick(site.greeting) }}</p>
+      <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
+        <div>
+          <p class="label mb-6">{{ pick(site.greeting) }}</p>
 
-      <h1
-        class="min-h-[1.1em] text-[clamp(2.5rem,9vw,5.5rem)]/[0.9] font-bold tracking-tighter"
-      >
-        {{ typed }}<span v-if="isTyping" class="caret ml-1" aria-hidden="true" />
-      </h1>
+          <!-- The invisible copy reserves the final size so the typing never pushes the layout. -->
+          <h1 class="grid text-[clamp(2.75rem,8vw,5.5rem)]/[0.92] font-bold tracking-tighter">
+            <span class="invisible col-start-1 row-start-1" aria-hidden="true">{{ site.name }}</span>
+            <span class="col-start-1 row-start-1">
+              {{ typed }}<span v-if="isTyping" class="caret ml-1" aria-hidden="true" />
+            </span>
+          </h1>
 
-      <p class="mt-8 max-w-[54ch] text-lg leading-relaxed">
-        {{ t('home.tagline') }}
-      </p>
+          <p class="mt-6 text-[13px] uppercase tracking-[0.18em] text-accent">
+            {{ pick(site.role) }}
+          </p>
 
-      <div class="mt-10 flex flex-wrap items-start gap-8">
-        <figure class="group relative w-40 shrink-0 overflow-hidden border border-rule sm:w-52">
+          <p class="mt-6 max-w-[30ch] text-2xl leading-snug tracking-tight sm:text-3xl">
+            {{ t('home.tagline') }}
+          </p>
+
+          <p class="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
+            {{ pick(site.statement) }}
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-x-4 gap-y-3">
+            <RouterLink
+              to="/projects"
+              class="border border-ink bg-ink px-5 py-2.5 text-[13px] text-paper transition-colors duration-300 hover:border-accent hover:bg-accent"
+            >
+              {{ t('home.seeMyWork') }}
+            </RouterLink>
+            <a
+              :href="`mailto:${site.email}`"
+              class="border border-rule px-5 py-2.5 text-[13px] transition-colors duration-300 hover:border-accent hover:text-accent"
+            >
+              {{ t('home.getInTouch') }}
+            </a>
+          </div>
+        </div>
+
+        <figure
+          class="group relative w-48 shrink-0 overflow-hidden border border-rule sm:w-64 lg:w-80"
+        >
           <img
             :src="portrait"
             :alt="site.name"
-            class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <figcaption
-            class="absolute inset-x-0 bottom-0 translate-y-full bg-paper/90 px-2 py-1 text-[11px] uppercase tracking-[0.18em] text-muted transition-transform duration-300 group-hover:translate-y-0"
+            class="absolute inset-x-0 bottom-0 translate-y-full bg-paper/90 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted transition-transform duration-300 group-hover:translate-y-0"
           >
             {{ t('home.thatsMe') }}
           </figcaption>
         </figure>
-
-        <p class="max-w-[46ch] text-muted">{{ pick(site.statement) }}</p>
-      </div>
-
-      <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3">
-        <RouterLink
-          to="/projects"
-          class="border border-ink px-4 py-2 text-[13px] transition-colors duration-300 hover:border-accent hover:text-accent"
-        >
-          {{ t('home.seeMyWork') }}
-        </RouterLink>
-        <a
-          :href="`mailto:${site.email}`"
-          class="border border-rule px-4 py-2 text-[13px] text-muted transition-colors duration-300 hover:border-accent hover:text-accent"
-        >
-          {{ t('home.getInTouch') }}
-        </a>
       </div>
     </section>
 
     <!-- Status strip -->
-    <section class="grid gap-6 border-b border-rule py-6 sm:grid-cols-3">
-      <div>
+    <section class="grid border-y border-rule sm:grid-cols-3">
+      <div class="border-b border-rule py-6 sm:border-r sm:border-b-0 sm:pr-6">
         <p class="label">{{ t('home.currently') }}</p>
-        <p class="mt-1 flex items-start gap-2 text-[13px]">
-          <span class="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+        <p class="mt-2 flex items-start gap-2.5 text-base leading-snug">
+          <span class="relative mt-2 flex h-2 w-2 shrink-0" aria-hidden="true">
+            <span class="absolute inset-0 animate-ping rounded-full bg-accent opacity-60" />
+            <span class="relative h-2 w-2 rounded-full bg-accent" />
+          </span>
           {{ pick(site.available) }}
         </p>
       </div>
-      <div>
+      <div class="border-b border-rule py-6 sm:border-r sm:border-b-0 sm:px-6">
         <p class="label">{{ t('home.basedIn') }}</p>
-        <p class="mt-1 text-[13px]">{{ site.location }}</p>
+        <p class="mt-2 text-base leading-snug">{{ site.location }}</p>
       </div>
-      <div>
+      <div class="py-6 sm:pl-6">
         <p class="label">{{ t('home.connect') }}</p>
-        <ul class="mt-1 flex flex-wrap gap-x-4 text-[13px]">
+        <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-base leading-snug">
           <li v-for="link in site.links" :key="link.label">
             <a :href="link.href" target="_blank" rel="noreferrer" class="link-draw">
-              {{ link.label }}
+              {{ link.label }} <span class="text-faint" aria-hidden="true">↗</span>
             </a>
           </li>
         </ul>
       </div>
-    </section>
-
-    <!-- Featured work -->
-    <section class="pt-16">
-      <div class="mb-2 flex items-baseline justify-between border-b border-rule pb-4">
-        <h2 class="label">{{ t('home.featuredWork') }}</h2>
-        <RouterLink to="/projects" class="link-draw text-[13px] text-muted">
-          {{ t('home.allProjects') }}
-        </RouterLink>
-      </div>
-
-      <ProjectRow v-for="project in featured" :key="project.slug" :project="project" />
-    </section>
-
-    <!-- Contact -->
-    <section class="pt-20">
-      <p class="label">{{ t('home.contactHeading') }}</p>
-      <p class="mt-4 max-w-[44ch] text-2xl leading-snug tracking-tight sm:text-3xl">
-        {{ t('home.contactLine') }}
-        <a :href="`mailto:${site.email}`" class="link-draw text-accent">{{ t('home.sayHello') }}</a>
-      </p>
     </section>
   </div>
 </template>
